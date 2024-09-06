@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Scanner
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -13,10 +14,26 @@ public class Main {
         peliculas[2]="gladiador";
         peliculas[3]="el señor de los anillos romulo";
         Arrays.sort(peliculas);
-        for(int i=0; i<peliculas.length; i++){
-            System.out.println("  peliculas  "+ peliculas[i]);
+        for(int i=0; i<peliculas.length; i++) {
+            System.out.println("  peliculas  " + peliculas[i]);
+
+
+
+
         }
 
+           /*Crea un nuevo array que contenga la lista de películas en
+            mayúscula.*/
+
+
+        System.out.println("Peliculas en Mayusculas");
+        String[] peliculas2=new String[3];
+        peliculas2[0]="hackers";
+        peliculas2[1]="intensamente2";
+        peliculas2[2]="tarzan";
+        peliculas2[3]="spiderman";
+
+        for(i=0; i<peliculas2)
 
 
 
@@ -24,7 +41,36 @@ public class Main {
 
 
 
-        //crea una función que de acuerdo a la edad del
+
+
+
+         /*Resolver los ejercicios 1 y 2 implementando dos funciones que
+utilicen la clase Scanner.*/
+
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Ingrese su edad y nombre separados por un
+                    espacio");
+                    Integer edad= scanner.nextInt();
+            String nombre= scanner.nextLine();
+            if(edad <= 0 || nombre.isEmpty(){
+                System.err.println("Ingrese un valor válido");
+            }else{
+                System.out.println(edad + " "+ nombre);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                //crea una función que de acuerdo a la edad del
         //usuario( recibe fecha de nacimiento) y si tiene entrada indique
         //si puede o no asistir al evento, debe ser mayor.
 
@@ -38,6 +84,10 @@ public class Main {
 
 
     }
+
+
+
+
 
     //Necesitamos crear una función que reciba dos números en
     //formato texto y retorne el cociente de dividir el primero
