@@ -10,6 +10,7 @@ public class Cuenta {
 
 
 
+
     public Cuenta(String titular, Integer dni, Double saldoInicial, Integer numeroCuenta, String alias) {
 
         this.titular = titular;
@@ -27,20 +28,35 @@ public class Cuenta {
         System.out.println(saldoInicial);
 
     }
-   /*
-    public transferir(Integer numeroCuenta,Double monto) {
-        return this.;
+
+    public void transferir(Integer numeroCuenta,Double monto) {
+        if(monto<=saldoInicial){
+
+          saldoInicial=saldoInicial-monto;
+            System.out.println("Tranferencia Exitosa"+ saldoInicial);
+
+        }else {
+
+            System.out.println("No se ejecuto la transferencia");
+
+
+
+        }
+
+
+
 
     }
 
-*/
+
     public void retirar(Double monto) {
 
         if(monto<=saldoInicial){
            saldoInicial=saldoInicial-monto;
+          System.out.println(saldoInicial);
+      }else{
 
-
-            System.out.println(saldoInicial);
+        System.out.println("saldo insuficiente");
 
 
 
@@ -50,5 +66,11 @@ public class Cuenta {
     }
 
 
+    public Integer getnumeroCuenta(){
+
+        return this.numeroCuenta;
+
+
+    }
 
 }
