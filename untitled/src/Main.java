@@ -6,7 +6,7 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-
+        compararcadena();
         ordernarpeliculas();
 
 
@@ -125,6 +125,45 @@ utilicen la clase Scanner.*/
 
         }
     }
+    /*5.necesitamos un programa que reciba dos cadenas de texto y  que  cada una contenga dos películas separadas
+    por una coma.
+
+    El método debe retornar la que tenga mayor cantidad de caracteres.
+    Debe generar un array de cuatro elementos.
+    Debe guardar las cuatro películas en el array e imprimirlas por consola.
 
 
-}
+    1-  ingreso de datos
+2- compararr las dos cadenas (ompareTo)  tienen que retornar la mayor
+3- crear un array y guardar los cuatro elementos en el mismo usando split
+4- imprimir el array
+length()
+
+    */
+    public static String compararcadena() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese dos peliculas");
+        String pelicula1 = scanner.nextLine();
+        String pelicula2 = scanner.nextLine();
+
+
+        String[] pelicularecibidas = new String[4];
+        String[] peliculasrecibidas = pelicula1.split(",");
+
+
+        if (pelicula1.compareTo(pelicula2) == -1) {
+            return pelicula2;
+        }
+        else if (pelicula1.compareTo(pelicula2) == 0){
+                return "son iguales";
+
+            }
+                else{
+
+                return pelicula1;
+
+            }
+        }
+
+
+    }
