@@ -1,0 +1,40 @@
+Index: untitled/src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.time.LocalDate;\r\nimport java.util.Arrays;\r\nimport java.util.Scanner;\r\n\r\n//TIP To <b>Run</b> code, press <shortcut actionId=\"Run\"/> or\r\n// click the <icon src=\"AllIcons.Actions.Execute\"/> icon in the gutter.\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n\r\n        ordernarpeliculas();\r\n\r\n\r\n\r\n\r\n        //1. Crea un arrays de cuatro películas e imprimirlas por orden alfabético.\r\n        String[] peliculas = new String[4];\r\n        peliculas[0] = \"batman\";\r\n        peliculas[1] = \"superman\";\r\n        peliculas[2] = \"gladiador\";\r\n        peliculas[3] = \"el señor de los anillos romulo\";\r\n        Arrays.sort(peliculas);\r\n        for (int i = 0; i < peliculas.length; i++) {\r\n            System.out.println(\"  peliculas  \" + peliculas[i]);\r\n\r\n        }\r\n\r\n           /*2-Crea un nuevo array que contenga la lista de películas en\r\n            mayúscula.*/\r\n\r\n\r\n        System.out.println(\"Peliculas en Mayusculas\");\r\n        String[] peliculas2 = new String[4];\r\n        peliculas2[0] = \"hackers\";\r\n        peliculas2[1] = \"intensamente2\";\r\n        peliculas2[2] = \"tarzan\";\r\n        peliculas2[3] = \"spiderman\";\r\n\r\n        for (int i = 0; i < peliculas2.length; i++) {\r\n            peliculas2[i] = peliculas2[i].toUpperCase();\r\n            System.out.println(peliculas2[i]);\r\n\r\n        }\r\n\r\n\r\n        //crea una función que de acuerdo a la edad del\r\n        //usuario( recibe fecha de nacimiento) y si tiene entrada indique\r\n        //si puede o no asistir al evento, debe ser mayor.\r\n\r\n        System.out.println(numtexto(\"100\", \"50\"));\r\n\r\n\r\n        LocalDate fechadenacimiento = LocalDate.of(2024, 7, 6);\r\n        System.out.println(ingresa(fechadenacimiento, true));\r\n\r\n        cantidad_s(\"eL SOL SALE POR LAS MAÑANAS\");\r\n\r\n\r\n    }\r\n\r\n\r\n    //Necesitamos crear una función que reciba dos números en\r\n    //formato texto y retorne el cociente de dividir el primero\r\n    //por el segundo.\r\n\r\n\r\n    public static Integer numtexto(String num1text, String num2text) {\r\n        Integer num1 = Integer.parseInt(num1text);\r\n        Integer num2 = Integer.parseInt(num2text);\r\n\r\n        return num1 / num2;\r\n\r\n    }\r\n\r\n    //  Escribi una funcion que reciba una cadena de texto y cuente la cantidad de \"sss\" .retorna la\r\n    //    cantidad encontrada.\r\n\r\n\r\n    public static int cantidad_s(String cantidads) {\r\n\r\n        int contador = 0;\r\n\r\n        for (int i = 0; i < cantidads.length(); i++) {\r\n\r\n            if (cantidads.toLowerCase().charAt(i) == 's') {\r\n\r\n                contador = contador + 1;\r\n            }\r\n\r\n\r\n        }\r\n        System.out.println(\"    cantidad de sss   \" + contador);\r\n        return contador;\r\n\r\n\r\n    }\r\n\r\n\r\n    public static Boolean ingresa(LocalDate fechanacimiento, Boolean entrada) {\r\n\r\n        int edad = LocalDate.now().getYear() - fechanacimiento.getYear();\r\n        if (entrada && edad >= 18) {\r\n\r\n            return true;\r\n        } else {\r\n\r\n            return false;\r\n\r\n        }\r\n\r\n    }\r\n     /*Resolver los ejercicios 1 y 2 implementando dos funciones que\r\nutilicen la clase Scanner.*/\r\n\r\n    public static void ordernarpeliculas() {\r\n\r\n        Scanner scanner = new Scanner(System.in);\r\n        System.out.println(\"Pelis ordenadas\");\r\n        String pelisrecibidas = scanner.nextLine();\r\n        String[] Arrayseparadas = pelisrecibidas.split(\",\");\r\n        Arrays.sort(Arrayseparadas);\r\n        for (int i = 0; i < Arrayseparadas.length; i++) {\r\n\r\n            System.out.println(Arrayseparadas[i].toUpperCase());\r\n\r\n\r\n        }\r\n    }\r\n\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/untitled/src/Main.java b/untitled/src/Main.java
+--- a/untitled/src/Main.java	(revision 7827121ee190a1602f5c57e289a4ff4ae1144d5d)
++++ b/untitled/src/Main.java	(date 1726191735648)
+@@ -7,6 +7,18 @@
+ public class Main {
+     public static void main(String[] args) {
+ 
++     /*4.>>*/
++        int contador = 0;
++
++        for (int i = 0; i < cantidads.length(); i++) {
++
++            if (cantidads.toLowerCase().charAt(i) == 's') {
++
++                contador = contador + 1;
++            }
++
++
++
+         ordernarpeliculas();
+ 
+ 
+@@ -126,5 +138,9 @@
+         }
+     }
+ 
++    /*4. Crea una variable que guardará la primera película que comience
++    con “L”, se debe recorrer el array buscando el primer resultado.*/
++
++
+ 
+ }
+\ No newline at end of file

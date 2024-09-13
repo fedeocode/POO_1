@@ -1,0 +1,19 @@
+Index: untitled/src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import entidades.Cuenta;\r\n\r\n//TIP To <b>Run</b> code, press <shortcut actionId=\"Run\"/> or\r\n// click the <icon src=\"AllIcons.Actions.Execute\"/> icon in the gutter.\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n\r\n\r\n           Cuenta uno=new Cuenta(\"fede\",35,87.32,32,\"batman\");\r\n           uno.depositar(30.00);\r\n           uno.retirar(20.00);\r\n           \r\n        }\r\n\r\n\r\n\r\n\r\n    }
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/untitled/src/Main.java b/untitled/src/Main.java
+--- a/untitled/src/Main.java	(revision dfac41897267389bd0276d97e775fa5a52e17e32)
++++ b/untitled/src/Main.java	(date 1725635216165)
+@@ -9,7 +9,7 @@
+            Cuenta uno=new Cuenta("fede",35,87.32,32,"batman");
+            uno.depositar(30.00);
+            uno.retirar(20.00);
+-           
++
+         }
+ 
+ 

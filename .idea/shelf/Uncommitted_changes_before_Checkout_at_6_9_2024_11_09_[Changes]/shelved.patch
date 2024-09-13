@@ -1,0 +1,47 @@
+Index: untitled/src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>//TIP To <b>Run</b> code, press <shortcut actionId=\"Run\"/> or\r\n// click the <icon src=\"AllIcons.Actions.Execute\"/> icon in the gutter.\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n        //TIP Press <shortcut actionId=\"ShowIntentionActions\"/> with your caret at the highlighted text\r\n        // to see how IntelliJ IDEA suggests fixing it.\r\n        System.out.printf(\"subiendo cambios\");\r\n\r\n        for (int i = 1; i <= 5; i++) {\r\n            //TIP Press <shortcut actionId=\"Debug\"/> to start debugging your code. We have set one <icon src=\"AllIcons.Debugger.Db_set_breakpoint\"/> breakpoint\r\n            // for you, but you can always add more by pressing <shortcut actionId=\"ToggleLineBreakpoint\"/>.\r\n            System.out.println(\"i = \" + i);\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/untitled/src/Main.java b/untitled/src/Main.java
+--- a/untitled/src/Main.java	(revision dbfcc44771cbd9e48c94a5de2a3063d44b4b27f9)
++++ b/untitled/src/Main.java	(date 1725631628477)
+@@ -1,15 +1,13 @@
++import java.time.LocalDate;
++import java.util.Arrays;
++import java.util.Scanner
++
+ //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+ // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+ public class Main {
+     public static void main(String[] args) {
+-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
+-        // to see how IntelliJ IDEA suggests fixing it.
+-        System.out.printf("subiendo cambios");
++
+ 
+-        for (int i = 1; i <= 5; i++) {
+-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
+-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
+-            System.out.println("i = " + i);
+-        }
+-    }
+-}
+\ No newline at end of file
++
++}
++    }
+\ No newline at end of file
+Index: untitled/src/entidades/Cuenta.java
+===================================================================
+diff --git a/untitled/src/entidades/Cuenta.java b/untitled/src/entidades/Cuenta.java
+new file mode 100644
+--- /dev/null	(date 1725631628530)
++++ b/untitled/src/entidades/Cuenta.java	(date 1725631628530)
+@@ -0,0 +1,4 @@
++package entidades;
++
++public class Cuenta {
++}
