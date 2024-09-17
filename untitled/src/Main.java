@@ -1,15 +1,36 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Arrays;
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("subiendo cambios");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+
+        String[] peliculas=new String[4];
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Ingrese dos peliculas con ,");
+        String pelicula1 = scanner.nextLine();
+
+        System.out.println("ingrese primera pelicula");
+        String pelicula2 = scanner.nextLine();
+
+
+        System.out.println("ingrese segunda pelicula");
+        String pelicula3=scanner.nextLine();
+
+        System.out.println("ingrese tercera pelicula");
+        String pelicula4=scanner.nextLine();
+
+        String[] pelicularecibidas = new String[4];
+        String[] peliculasrecibidas = pelicula1.split(",");
+
+        peliculas[0]=pelicularecibidas[1];
+        peliculas[1]=pelicularecibidas[2];
+        peliculas[2]=pelicularecibidas[3];
+        peliculas[3]=pelicularecibidas[4];
+
+       for (int i = 1; i <= peliculas.length ; i++) {
+
+           System.out.printf(peliculas[i]);
         }
     }
 }
