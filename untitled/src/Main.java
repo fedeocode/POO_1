@@ -1,6 +1,7 @@
 import entidades.Producto;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -15,6 +16,21 @@ public class Main {
 
         System.out.println("Motos disponibles "+'\n'+motoUno.stockDisponible());
         System.out.println("ganacias motos"+'\n'+motoUno.calcularGanancia());
+
+
+        ArrayList<Producto> listadeProductos=new ArrayList<>();
+
+
+        /*  motoUno es la clase que esta arriba seria motoUno */
+
+        listadeProductos.add(motoUno);
+        for(int i=0;i<listadeProductos.size();i++){
+
+            System.out.println("lista de Productos"+listadeProductos.get(i));
+
+       }
+
+        listadeProductos.remove(motoUno);
 
 
 
