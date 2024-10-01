@@ -25,53 +25,60 @@ un texto.*/
 import java.time.LocalDate;
 
 public class Venta {
-
+    private String producto;
+    private Double precioCompra;
+    private Double precioVenta;
+    private Integer stockDisponible;
+    private String infoVenta;
     private Integer idVenta;
-    private static Double comision = 0.10;
+    private static Double comisionModificda = 0.10;
 
 
     public Venta(Integer idVenta, Double comision) {
+        this.producto = producto;
+        this.precioCompra = precioCompra;
+        this.precioVenta = precioVenta;
+        this.stockDisponible = stockDisponible;
 
         this.idVenta = idVenta;
-        this.comision = comision;
+         }
 
+    public Double precioTotal(Double precioTotal) {
+
+         precioTotal=this.precioVenta * stockDisponible;
+
+        return precioTotal;
     }
-/*
-    public Double precioTotal() {
 
-        return this.precioVenta * this.stockDisponible;
-
-
-    }
-  */
-    public static void fechaOperacion(LocalDate fechaOperacion) {
+    public  void fechaOperacion(LocalDate fechaOperacion) {
 
         fechaOperacion(LocalDate.now());
+        System.out.println("Fecha de operacion " + fechaOperacion);
+
 
     }
-/*
+
     public static Double setcomisionModificada(Double comisionCambiada) {
 
-        //comisionModificda=comisionCambiada;
-
-    }
-*/
-    public static void compararStock(Double comparaStock) {
-
-        comparaStock.compareTo(comparaStock);
-
+        comisionModificda=comisionCambiada;
 
     }
 
-    public static void ventasIguales(Double ventasIguales) {
+    public void compararStock() {
 
-        ventasIguales.equals(ventasIguales);
+        this.stockDisponible.compareTo(precioTotal(producto));
+
 
     }
 
-    public static void getinfoperacion(String infoperacion) {
-        System.out.println(infoperacion);
+    public void ventasIguales() {
 
+        this.precioVenta.equals(precioTotal(precioCompra));
+    }
+
+    public String getinfoperacion(String producto,Double precioCompra,Double precioVenta) {
+
+       return this.infoVenta;
 
     }
 
