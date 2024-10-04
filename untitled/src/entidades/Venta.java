@@ -39,7 +39,6 @@ public class Venta {
         this.precioCompra = precioCompra;
         this.precioVenta = precioVenta;
         this.stockDisponible = stockDisponible;
-
         this.idVenta = idVenta;
          }
 
