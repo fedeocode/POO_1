@@ -1,11 +1,11 @@
 public class EmpleadoLavadorLavajilla extends EmpleadoLimpieza{
 
-    private Integer cantidadVajillarota;
-    private Double costoAcumuladoVajillarota;
+    private Integer cantidadVajillarota=0;
+    private Double costoAcumuladoVajillarota=0.0;
 
 
-    public EmpleadoLavadorLavajilla(String nombre, Integer dni, Integer legajo, Double sueldoTotal) {
-        super(nombre, dni, legajo, sueldoTotal);
+    public EmpleadoLavadorLavajilla(String nombre, Integer dni, Integer legajo) {
+        super(nombre, dni, legajo);
     }
 
    public void romper(Integer cantidadvajilla,Double costovajilla){
@@ -21,6 +21,14 @@ public class EmpleadoLavadorLavajilla extends EmpleadoLimpieza{
 
     @Override
     public void calcularSueldoMes() {
-        this.sueldoTotal=sueldoFijo-costoAcumuladoVajillarota;
+
+         this.sueldoTotal=sueldoFijo;
+         if(cantidadVajillarota>=2){
+
+          this.descontarSueldo();
+           }
+        System.out.println("Sueldo del mes"+sueldoTotal);
+
+
     }
 }

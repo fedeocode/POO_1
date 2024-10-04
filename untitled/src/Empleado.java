@@ -13,7 +13,7 @@ public Empleado(String nombre,Integer dni,Integer legajo){
 
 public void guardarDatos(String datos){
 
-
+this.nombre=nombre;
 
 
 }
