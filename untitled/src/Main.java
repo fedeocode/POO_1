@@ -10,11 +10,13 @@ public class Main {
         mateo.realizarHorasExtras(4);
         mateo.calcularSueldoMes();
         EmpleadoLavadorLavajilla pablo=new EmpleadoLavadorLavajilla("Pablo",32456789,1254);
+
         pablo.calcularSueldoMes();
         pablo.descontarSueldo();
         pablo.romper(40,30.0);
         miriam.calcularSueldoMes();
-        
+
+
 
 
 
