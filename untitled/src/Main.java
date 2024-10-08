@@ -14,14 +14,17 @@ public class Main {
 
 
         Producto motoUno=new Producto("g22",20.55,90.000,30);
-        Venta producto=new Producto("olla",300.00,400,20);
-        System.out.println("Informacion del Producto " + producto.getinfoperacion("olla",20.00,30.00));
-        Venta.setcomisionModificada(20.00);
+        Venta producto=new Venta(3,300.00,200.00,"olla",300);
+
+        System.out.println(producto.getinfoperacion("Informacion de olla precio y venta","olla",299.00,200.00));
+        System.out.println(producto.compararStock());
         System.out.println("Estos productos son iguales"+ producto.ventasIguales());
-        System.out.println("Estos  productos estan comparados"+ producto.compararStock();
+        producto.fechaOperacion(LocalDate.now());
+        producto.ventasIguales();
+        producto.precioTotal(200.00,20,400.00);
         System.out.println("Motos disponibles "+'\n'+motoUno.stockDisponible());
         System.out.println("ganacias motos"+'\n'+motoUno.calcularGanancia());
-
+        Venta.setcomisionModificada(20.00);
 
         ArrayList<Producto> listadeProductos=new ArrayList<>();
 

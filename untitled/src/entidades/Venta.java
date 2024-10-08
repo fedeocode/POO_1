@@ -29,29 +29,27 @@ public class Venta {
     private Double precioCompra;
     private Double precioVenta;
     private Integer stockDisponible;
-    private String infoVenta;
     private Integer idVenta;
     private static Double comisionModificda = 0.10;
 
 
-    public Venta(Integer idVenta, Double comision) {
+    public Venta(Integer idVenta, Double precioCompra, Double precioVenta, String producto, Integer stockDisponible) {
         this.producto = producto;
         this.precioCompra = precioCompra;
         this.precioVenta = precioVenta;
         this.stockDisponible = stockDisponible;
         this.idVenta = idVenta;
-         }
-
-    public Double precioTotal(Double precioTotal) {
-
-         precioTotal=this.precioVenta * stockDisponible;
-
-        return precioTotal;
     }
 
-    public  void fechaOperacion(LocalDate fechaOperacion) {
+    public void precioTotal(Double precioVenta,Integer stockDisponible,Double precioTotalidad ) {
 
-        fechaOperacion(LocalDate.now());
+        precioTotalidad = this.precioVenta * this.stockDisponible;
+
+        System.out.println(precioTotalidad);
+    }
+
+    public void fechaOperacion(LocalDate fechaOperacion) {
+
         System.out.println("Fecha de operacion " + fechaOperacion);
 
 
@@ -59,26 +57,32 @@ public class Venta {
 
     public static Double setcomisionModificada(Double comisionCambiada) {
 
-        comisionModificda=comisionCambiada;
+        comisionModificda = comisionCambiada;
+
+        return comisionModificda;
 
     }
 
-    public void compararStock() {
-
-        this.stockDisponible.compareTo(precioTotal(producto));
+    public Integer compararStock() {
 
 
+
+        return this.precioCompra.compareTo(this.precioVenta);
     }
 
-    public void ventasIguales() {
+    public Boolean ventasIguales() {
 
-        this.precioVenta.equals(precioTotal(precioCompra));
+
+        return this.precioVenta.equals(this.precioVenta);
     }
 
-    public String getinfoperacion(String producto,Double precioCompra,Double precioVenta) {
+    public String getinfoperacion(String getinfoperacion, String producto, Double precioCompra, Double precioVenta) {
 
-       return this.infoVenta;
+        this.producto = producto;
+        this.precioCompra = precioCompra;
+        this.precioVenta = precioVenta;
 
+     return getinfoperacion;
     }
 
 }

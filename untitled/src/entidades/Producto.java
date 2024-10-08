@@ -11,15 +11,15 @@ public class Producto {
     //disponible y cuál es la ganancia
     //obtenida por cada venta, según los
     //precios disponibles.>
-    private String nombre;
+    private String producto;
     private Double precioCompra;
     private Double precioVenta;
     private Integer stockDisponible;
 
 
     /*Constructor*/
-    public Producto(String nombre, Double precioCompra, Double precioVenta, Integer stockDisponible) {
-        this.nombre = nombre;
+    public Producto(String producto, Double precioCompra, Double precioVenta, Integer stockDisponible) {
+        this.producto = producto;
         this.precioCompra = precioCompra;
         this.precioVenta = precioVenta;
         this.stockDisponible = stockDisponible;
