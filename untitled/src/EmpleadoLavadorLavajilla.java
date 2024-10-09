@@ -13,7 +13,7 @@ public class EmpleadoLavadorLavajilla extends EmpleadoLimpieza{
         this.cantidadVajillarota=cantidadVajillarota+cantidadvajilla;
          this.costoAcumuladoVajillarota=this.costoAcumuladoVajillarota+(costovajilla*cantidadvajilla);
      }
- public void descontarSueldo(){
+ private void descontarSueldo(){
 
     this.sueldoTotal=sueldoTotal-costoAcumuladoVajillarota;
 

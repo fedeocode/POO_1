@@ -1,6 +1,6 @@
 public class Empleado {
     private String nombre;
-    private Integer dni;
+    protected Integer dni;
     private Integer legajo;
 
 public Empleado(String nombre,Integer dni,Integer legajo){
@@ -18,5 +18,32 @@ this.nombre=nombre;
 
 }
 
+    @Override
+    public int hashCode() {
+      int hash=17;
 
+      hash=hash*nombre.hashCode()*dni.hashCode();
+
+      return hash;
+
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        if (obj==null ||!( obj instanceof Empleado)) {
+
+            return false;
+        }
+        return ((Empleado)obj).dni.equals(this.dni);
+    }
+
+    @Override
+    public String toString() {
+        return "Empleado{" +
+                "nombre='" + nombre + '\'' +
+                ", dni=" + dni +
+                ", legajo=" + legajo +
+                '}';
+    }
 }
