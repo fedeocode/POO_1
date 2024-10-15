@@ -5,17 +5,20 @@ public class CajaDeAhorro extends Cuenta {
     public CajaDeAhorro(Double tasainteres) {
         this.tasainteres = tasainteres;
     }
+}
 
     @Override
 public void depositar (Double deposito){
+saldoCuenta=saldocuenta+deposito;
 
+        System.out.println("Deposito" + deposito );
 
 
 
 }
 
 @Override
-public Double extarer (Double monto){
+public Double extraer (Double monto){
 
 
 }
