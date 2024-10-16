@@ -1,4 +1,4 @@
-public class CuentaCorriente extends Cuenta {
+/*public class CuentaCorriente extends Cuenta {
 
     private Double limiteMontoDescubierto;
     private Double descubiertoDisponible;
@@ -19,3 +19,5 @@ public class CuentaCorriente extends Cuenta {
 
 
 }
+
+ */

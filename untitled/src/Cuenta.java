@@ -6,8 +6,19 @@ public abstract class Cuenta {
         this.saldoCuenta = saldoCuenta;
         this.cliente = cliente;
     }
+       public Double getSaldoCuenta(){
 
-    public abstract Double depositar(Double deposito);
+        return this.saldoCuenta;
+
+       }
+    public void setSaldoCuenta(Double saldoNuevo){
+
+        saldoCuenta=saldoNuevo;
+
+
+    }
+
+    public abstract void depositar(Double deposito);
 
     public abstract Double extraer(Double monto);
 

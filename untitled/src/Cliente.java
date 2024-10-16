@@ -6,7 +6,7 @@ public class Cliente {
   private String apellido;
   private Integer cuit;
   private Integer dni;
-  private ArrayList<Cuenta>cuentas
+  private ArrayList<Cuenta>cuentas;
 
   public Cliente(Integer id,String apellido,Integer cuit,Integer dni){
       this.id=id;
