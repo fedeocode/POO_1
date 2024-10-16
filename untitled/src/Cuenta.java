@@ -7,16 +7,17 @@ public abstract class Cuenta {
         this.cliente = cliente;
     }
 
-    public abstract void depositar (Double deposito);
-   public abstract Double extarer (Double monto);
+    public abstract Double depositar(Double deposito);
 
-   public void informarsaldo(){
+    public abstract Double extraer(Double monto);
 
-       System.out.println("Su saldo es:"+ saldoCuenta);
+    public void informarsaldo() {
+
+        System.out.println("Su saldo es:" + saldoCuenta);
 
     }
 
-   }
+}
 
 
 
