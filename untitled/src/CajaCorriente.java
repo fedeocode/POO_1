@@ -1,35 +1,58 @@
+
+
 public class CajaCorriente extends Cuenta {
 
-    private Double limitedeMontoDescubierto;
+    private static Double limitedeMontoDescubierto=50000.0;
+    private Double descubiertoDisponible=limitedeMontoDescubierto;
 
-    public CajaCorriente(Double saldoCuenta, Cliente cliente, Double limitedeMontoDescubierto) {
+    public CajaCorriente(Double saldoCuenta, Cliente cliente) {
         super(saldoCuenta, cliente);
         this.limitedeMontoDescubierto = limitedeMontoDescubierto;
-    }
 
+    }
     @Override
     public void depositar (Double deposito) {
+        if (deposito <= 0) {
+            System.out.println("Ingrese Monto Valido");
+        } else {
+            if (!limitedeMontoDescubierto.equals(descubiertoDisponible)) {
+                Double diferencia =descubiertoDisponible-limitedeMontoDescubierto;
+                descubiertoDisponible=descubiertoDisponible+diferencia;
+                deposito=deposito-diferencia;
+                setSaldoCuenta(getSaldoCuenta()+deposito);
+                System.out.println("saldo Actualizado"+getSaldoCuenta()+ "monto descubierto"+ descubiertoDisponible);
+              }
+            else{
+                   setSaldoCuenta(getSaldoCuenta()+deposito);
+                System.out.println("Saldo actual"+ getSaldoCuenta());
+            }
 
-        if (getSaldoCuenta() >= 0) {
-            Double nuevoSaldo = getSaldoCuenta() + deposito;
-            this.setSaldoCuenta(nuevoSaldo);
         }
+
+
     }
     @Override
     public Double extraer (Double monto){
+      if(monto<=0){
 
-        if(getSaldoCuenta()<=monto){
-
-            Double nuevoSaldo=getSaldoCuenta()-monto;
-            System.out.println("su saldo es");
-            this.setSaldoCuenta(nuevoSaldo);
+     return null;
+     }
+        else{
+             if(monto<=getSaldoCuenta()){
+             Double nuevoSaldo=getSaldoCuenta()-monto;
+               this.setSaldoCuenta(nuevoSaldo);
+                 System.out.println("Saldo Cuenta"+getSaldoCuenta());
+               return monto;
+    }
+        if(descubiertoDisponible+getSaldoCuenta()>=monto){
+          Double decubiertoSolicitado=monto-getSaldoCuenta();
+            this.setSaldoCuenta(0.0);
+            descubiertoDisponible=descubiertoDisponible-decubiertoSolicitado;
+            System.out.println("Saldo prestado caja corriente"+getSaldoCuenta()+ " Descubierto disponible"+ descubiertoDisponible);
             return monto;
-
-        }
-
-        System.out.println("Su monto no es valido");
+   }
+     }
+       System.out.println("Su monto no es valido");
         return null;
     }
-
-
 }

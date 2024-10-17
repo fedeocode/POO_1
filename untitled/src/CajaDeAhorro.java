@@ -9,7 +9,7 @@ public class CajaDeAhorro extends Cuenta {
 
     @Override
 public void depositar (Double deposito){
-         if(deposito<0) {
+         if(deposito<=0) {
              System.out.println("Ingrese monto Valido");
          }
           else{
@@ -20,15 +20,19 @@ public void depositar (Double deposito){
 @Override
 public Double extraer (Double monto){
 
-      if(getSaldoCuenta()>=monto){
+    if(monto<=0){
+        System.out.println("Ingrese un Monto mayor a cero");
+        return null;
+    }else {
+        if (getSaldoCuenta() >= monto) {
 
-          Double nuevoSaldo=getSaldoCuenta()-monto;
-          System.out.println("su saldo es"+nuevoSaldo);
-          this.setSaldoCuenta(nuevoSaldo);
-          return monto;
+            Double nuevoSaldo = getSaldoCuenta() - monto;
+            System.out.println("su saldo es" + nuevoSaldo);
+            this.setSaldoCuenta(nuevoSaldo);
+            return monto;
 
-      }
-
+        }
+    }
     System.out.println("Su monto no es valido");
      return null;
 }
