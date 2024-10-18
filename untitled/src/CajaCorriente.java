@@ -16,8 +16,10 @@ public class CajaCorriente extends Cuenta {
             System.out.println("Ingrese Monto Valido");
         } else {
             if (!limitedeMontoDescubierto.equals(descubiertoDisponible)) {
-                Double diferencia =descubiertoDisponible-limitedeMontoDescubierto;
-                descubiertoDisponible=descubiertoDisponible+diferencia;
+                Double diferencia =limitedeMontoDescubierto-deposito;
+                if(diferencia<=descubiertoDisponible){
+                     descubiertoDisponible=descubiertoDisponible+diferencia;
+             }
                 deposito=deposito-diferencia;
                 setSaldoCuenta(getSaldoCuenta()+deposito);
                 System.out.println("saldo Actualizado"+getSaldoCuenta()+ "monto descubierto"+ descubiertoDisponible);

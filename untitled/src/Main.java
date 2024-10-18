@@ -3,20 +3,20 @@
 public class Main {
     public static void main(String[] args) {
         Cliente juan=new Cliente(3,"fernandez",30,32345876);
-        CajaDeAhorro cuenta=new CajaDeAhorro(5000.00,juan,20.01);
-        CajaCorriente cuenta1=new CajaCorriente(10.00,juan);
-        System.out.println("Saldo de su Cuenta"+cuenta.getSaldoCuenta());
-        cuenta.setSaldoCuenta(200.00);
-        cuenta.extraer(10000.00);
-        cuenta.depositar(00.00);
-        cuenta1.extraer(20.00);
-        System.out.println("saldo de Caja Corriente"+cuenta1.getSaldoCuenta());
-        System.out.println("Extraccion de Cuenta"+cuenta1.extraer(210.00));
-        cuenta1.depositar(20.00);
+        CajaDeAhorro cajadeahorro=new CajaDeAhorro(5000.00,juan,20.01);
+        CajaCorriente cajacorriente=new CajaCorriente(10.00,juan);
+        System.out.println("Saldo de su Cuenta"+cajadeahorro.getSaldoCuenta());
+        cajadeahorro.setSaldoCuenta(200.00);
+        cajadeahorro.extraer(10000.00);
+        cajadeahorro.depositar(00.00);
+        cajacorriente.extraer(20.00);
+        System.out.println("saldo de Caja Corriente"+cajacorriente.getSaldoCuenta());
+        System.out.println("Extraccion de Cuenta"+cajacorriente.extraer(210.00));
+        cajacorriente.depositar(20.00);
         System.out.println("Saldo cuenta corriente");
-        cuenta1.depositar(200.00);
+        cajacorriente.depositar(200.00);
         System.out.println("");
-        cuenta.informarsaldo();
+        cajadeahorro.informarsaldo();
 
             }
 }
