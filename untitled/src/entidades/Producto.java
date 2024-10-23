@@ -11,14 +11,14 @@ public class Producto {
     //disponible y cuál es la ganancia
     //obtenida por cada venta, según los
     //precios disponibles.>
-    private String producto;
+    private Producto producto;
     private Double precioCompra;
     private Double precioVenta;
     private Integer stockDisponible;
 
 
     /*Constructor*/
-    public Producto(String producto, Double precioCompra, Double precioVenta, Integer stockDisponible) {
+    public Producto(Producto producto, Double precioCompra, Double precioVenta, Integer stockDisponible) {
         this.producto = producto;
         this.precioCompra = precioCompra;
         this.precioVenta = precioVenta;
@@ -26,16 +26,26 @@ public class Producto {
 
     }
 
-    public Integer stockDisponible() {
-        return this.stockDisponible;
+    public Boolean stockDisponible() {
+        if (stockDisponible <= 0) {
+            System.out.println("Stock vacio");
 
+            return false;
+        } else {
+
+            System.out.println("Stock disponible" + stockDisponible);
+
+            return true;
+        }
 
     }
 
-    public Double calcularGanancia() {
+    public Double calcularGanacia() {
 
-        return this.precioVenta - this.precioCompra;
+        Double ganancia = this.precioVenta - precioCompra;
 
+        return ganancia;
     }
+
 }
 

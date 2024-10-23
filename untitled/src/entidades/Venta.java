@@ -25,32 +25,21 @@ un texto.*/
 import java.time.LocalDate;
 
 public class Venta {
-    private String producto;
-    private Double precioCompra;
-    private Double precioVenta;
-    private Integer stockDisponible;
+    private Producto producto;
     private Integer idVenta;
     private static Double comisionModificda = 0.10;
 
 
-    public Venta(Integer idVenta, Double precioCompra, Double precioVenta, String producto, Integer stockDisponible) {
+    public Venta(Integer idVenta) {
         this.producto = producto;
-        this.precioCompra = precioCompra;
-        this.precioVenta = precioVenta;
-        this.stockDisponible = stockDisponible;
         this.idVenta = idVenta;
     }
 
-    public void precioTotal(Double precioVenta,Integer stockDisponible,Double precioTotalidad ) {
 
-        precioTotalidad = this.precioVenta * this.stockDisponible;
-
-        System.out.println(precioTotalidad);
-    }
 
     public void fechaOperacion(LocalDate fechaOperacion) {
 
-        System.out.println("Fecha de operacion " + fechaOperacion);
+        System.out.println("Fecha de operacion");
 
 
     }
@@ -65,24 +54,11 @@ public class Venta {
 
     public Integer compararStock() {
 
-
-
         return this.precioCompra.compareTo(this.precioVenta);
     }
 
-    public Boolean ventasIguales() {
-
-
-        return this.precioVenta.equals(this.precioVenta);
+    @Override
+    public String toString() {
+        return super.toString();
     }
-
-    public String getinfoperacion(String getinfoperacion, String producto, Double precioCompra, Double precioVenta) {
-
-        this.producto = producto;
-        this.precioCompra = precioCompra;
-        this.precioVenta = precioVenta;
-
-     return getinfoperacion;
-    }
-
 }

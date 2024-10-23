@@ -13,15 +13,15 @@ public class Main {
 
 
 
-        Producto motoUno=new Producto("g22",20.55,90.000,30);
-        Venta producto=new Venta(3,300.00,200.00,"olla",300);
+        Producto motoUno=new Producto(20.55,90.000,30);
+        Producto producto=new Producto(3,300.00,200.00,"olla",300);
+        Venta venta=new Venta(3);
 
-        System.out.println(producto.getinfoperacion("Informacion de olla precio y venta","olla",299.00,200.00));
-        System.out.println(producto.compararStock());
+       producto.calcularGanacia();
+       producto.stockDisponible()
         System.out.println("Estos productos son iguales"+ producto.ventasIguales());
-        producto.fechaOperacion(LocalDate.now());
-        producto.ventasIguales();
-        producto.precioTotal(200.00,20,400.00);
+        venta.fechaOperacion(LocalDate.now());
+        venta.ventasIguales();
         System.out.println("Motos disponibles "+'\n'+motoUno.stockDisponible());
         System.out.println("ganacias motos"+'\n'+motoUno.calcularGanancia());
         Venta.setcomisionModificada(20.00);
