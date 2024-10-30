@@ -10,6 +10,9 @@ public class CajaCorriente extends Cuenta {
         this.limitedeMontoDescubierto = limitedeMontoDescubierto;
 
     }
+
+
+
     @Override
     public void depositar (Double deposito) {
         if (deposito <= 0) {
@@ -57,4 +60,29 @@ public class CajaCorriente extends Cuenta {
        System.out.println("Su monto no es valido");
         return null;
     }
-}
+
+    public void chequeDeposito(Cheque cheque){
+
+        if(cheque.getMonto()>=0.0){
+
+
+    }else {
+            Double diferencia=limitedeMontoDescubierto-descubiertoDisponible;
+            if(cheque.getMonto()>=diferencia) {
+
+              descubiertoDisponible=descubiertoDisponible+diferencia;
+              Double depositoRestante= cheque.getMonto()-diferencia;
+              setSaldoCuenta(getSaldoCuenta()+depositoRestante);
+                System.out.println("actual saldo"+ getSaldoCuenta());
+
+            }
+                else{
+                    descubiertoDisponible=descubiertoDisponible-diferencia;
+                System.out.println("Monto disponible"+ descubiertoDisponible);
+
+       }
+
+      }
+      }
+       }
+
