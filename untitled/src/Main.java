@@ -13,17 +13,19 @@ public class Main {
 
 
 
-        Producto motoUno=new Producto(20.55,90.000,30);
-        Producto producto=new Producto(3,300.00,200.00,"olla",300);
-        Venta venta=new Venta(3);
-
+        Producto motoUno=new Producto("yamaha",90.00,30.00,5);
+        Producto producto=new Producto("ollas",300.00,200.00,9);
+        Venta venta=new Venta(5,producto,300.0,5);
+        Venta venta1=new Venta(7,producto,399.0,3);
        producto.calcularGanacia();
-       producto.stockDisponible()
-        System.out.println("Estos productos son iguales"+ producto.ventasIguales());
+       producto.stockDisponible();
+        System.out.println("Monto Total " + venta.calcularMonto());
+        System.out.println("Comision de venta"+ venta.comisionVenta());
         venta.fechaOperacion(LocalDate.now());
-        venta.ventasIguales();
+        venta.ventasIguales(venta1);
+        motoUno.compararStock(producto);
+        System.out.println("Info de ventas"+ venta.toString());
         System.out.println("Motos disponibles "+'\n'+motoUno.stockDisponible());
-        System.out.println("ganacias motos"+'\n'+motoUno.calcularGanancia());
         Venta.setcomisionModificada(20.00);
 
         ArrayList<Producto> listadeProductos=new ArrayList<>();

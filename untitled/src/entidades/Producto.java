@@ -1,6 +1,5 @@
 package entidades;
 
-import java.sql.SQLOutput;
 import java.time.LocalDate;
 
 public class Producto {
@@ -11,19 +10,38 @@ public class Producto {
     //disponible y cuál es la ganancia
     //obtenida por cada venta, según los
     //precios disponibles.>
-    private Producto producto;
+    private String nombreProducto;
     private Double precioCompra;
     private Double precioVenta;
     private Integer stockDisponible;
 
 
     /*Constructor*/
-    public Producto(Producto producto, Double precioCompra, Double precioVenta, Integer stockDisponible) {
-        this.producto = producto;
+    public Producto(String nombreProducto, Double precioCompra, Double precioVenta, Integer stockDisponible) {
+        this.nombreProducto =nombreProducto;
         this.precioCompra = precioCompra;
         this.precioVenta = precioVenta;
         this.stockDisponible = stockDisponible;
 
+    }
+
+   public Double getPrecioVenta(){
+
+      return precioVenta;
+
+   }
+
+
+
+    public Integer getStockDisponible(){
+
+        return stockDisponible;
+
+          }
+
+    public void setStockDisponible(Integer stockDisponible){
+
+        this.stockDisponible=stockDisponible;
     }
 
     public Boolean stockDisponible() {
@@ -40,12 +58,37 @@ public class Producto {
 
     }
 
-    public Double calcularGanacia() {
+    public void compararStock(Producto producto){
 
-        Double ganancia = this.precioVenta - precioCompra;
+          if(this.stockDisponible>producto.getStockDisponible()) {
 
-        return ganancia;
+              System.out.println("Producto esta disponible, mas Stock");
+
+          } else if (this.stockDisponible<producto.getStockDisponible()) {
+              System.out.println("Producto no tiene, menos Stock");
+
+          }else{
+
+              System.out.println("Producto igual en Stock");
+          }
+
+
+        }
+
+      public Double calcularGanacia() {
+
+        return precioVenta - precioCompra;
+
     }
 
+    @Override
+    public String toString() {
+        return "Producto{" +
+                "nombreProducto='" + nombreProducto + '\'' +
+                ", precioCompra=" + precioCompra +
+                ", precioVenta=" + precioVenta +
+                ", stockDisponible=" + stockDisponible +
+                '}';
+    }
 }
 
