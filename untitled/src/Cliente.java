@@ -29,6 +29,11 @@ public class Cliente  implements Comparable<Cliente>  {
   }
 
     @Override
+    public int compareTo(Cliente o) {
+        return 0;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;

@@ -18,16 +18,26 @@ public class Cheque {
         System.out.println("cheque depositado"+this.monto);
 
         return mostrarInfo();
-
-
-
    }
 
     public Double getMonto() {
         return monto;
     }
 
+    @Override
+    public String toString() {
+        return "Cheque{" +
+                "monto=" + monto +
+                ", bancoEmisor='" + bancoEmisor + '\'' +
+                ", fechaDeEmision=" + fechaDeEmision +
+                '}';
+    }
+
     public void setMonto(Double monto) {
         this.monto = monto;
     }
+
+
 }
+
+
