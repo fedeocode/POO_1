@@ -1,12 +1,13 @@
 import java.time.LocalDate;
+import java.util.Date;
 
 public class Cheque {
 
     private Double monto;
     private String bancoEmisor;
-    private LocalDate fechaDeEmision;
+    private Date fechaDeEmision;
 
-    public Cheque(Double monto, String bancoEmisor, LocalDate fechaDeEmision) {
+    public Cheque(Double monto, String bancoEmisor, Date fechaDeEmision) {
         this.monto = monto;
         this.bancoEmisor = bancoEmisor;
         this.fechaDeEmision = fechaDeEmision;
