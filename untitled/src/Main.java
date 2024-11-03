@@ -4,6 +4,7 @@ import entidades.Venta;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -15,13 +16,12 @@ public class Main {
 
         Producto motoUno=new Producto("yamaha",90.00,30.00,5);
         Producto producto=new Producto("ollas",300.00,200.00,9);
-        Venta venta=new Venta(5,producto,300.0,5);
-        Venta venta1=new Venta(7,producto,399.0,3);
+        Venta venta=new Venta(5,producto,300.0,5,new Date(2003,7,3));
+        Venta venta1=new Venta(7,producto,399.0,3,new Date(2007,3,7));
        producto.calcularGanacia();
        producto.stockDisponible();
         System.out.println("Monto Total " + venta.calcularMonto());
         System.out.println("Comision de venta"+ venta.comisionVenta());
-        venta.fechaOperacion(LocalDate.now());
         venta.ventasIguales(venta1);
         motoUno.compararStock(producto);
         System.out.println("Info de ventas"+ venta.toString());

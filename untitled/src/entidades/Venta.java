@@ -24,20 +24,23 @@ un texto.*/
 
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class Venta {
     private Integer idVenta;
     private Producto producto;
     private Double monto;
     private Integer cantidad;
+    private Date fechadeOperacion;
     private static Double comisionModificda = 0.10;
 
 
-    public Venta(Integer idVenta, Producto nombreProducto,Double monto,Integer cantidad) {
+    public Venta(Integer idVenta, Producto nombreProducto,Double monto,Integer cantidad,Date fechadeOperacion) {
         this.idVenta = idVenta;
         this.producto = nombreProducto;
         this.monto=monto;
         this.cantidad=cantidad;
+        this.fechadeOperacion=fechadeOperacion;
     }
 
     public Integer getIdVenta() {
@@ -81,13 +84,15 @@ public class Venta {
         return producto.getPrecioVenta()*cantidad;
     }
 
-    public void fechaOperacion(LocalDate fechaOperacion) {
+  /* Yo pienso que es igual que Date.
+
+   public void fechaOperacion(LocalDate fechaOperacion) {
 
         System.out.println("Fecha de operacion");
 
 
     }
-
+*/
     public static Double setcomisionModificada(Double comisionCambiada) {
 
         comisionModificda = comisionCambiada;
