@@ -49,7 +49,13 @@ public class Vendedor implements Comparable<Vendedor>{
 
     }
 
-   public void reponerStock(){}
+   public void reponerStock(){
+
+
+
+
+
+   }
 
 
 
@@ -62,6 +68,7 @@ public class Vendedor implements Comparable<Vendedor>{
    }
 
    public Integer cantidadVentas(){
+
 
 
 
@@ -79,7 +86,9 @@ public class Vendedor implements Comparable<Vendedor>{
    @Override
     public int compareTo(Vendedor o) {
        return this.sueldo.compareTo(o.sueldo);
+
     }
+
 
     @Override
     public String toString() {
@@ -93,4 +102,16 @@ public class Vendedor implements Comparable<Vendedor>{
                 ", cantidadVenta=" + cantidadVenta +
                 '}';
     }
+
+   public void guardarDatos(){
+
+
+
+
+
+
+   }
+
+
+
 }
