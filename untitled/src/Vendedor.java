@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Vendedor implements Comparable<Vendedor>{
 
@@ -38,9 +39,18 @@ public class Vendedor implements Comparable<Vendedor>{
 
     listatareas.add(tarea);
 
+
       }
 
+   public void eliminarTarea( String tarea){
 
+        if(!listatareas.contains(tarea)){
+
+            System.out.println("No esta en la lista");
+        }else{
+            listatareas.remove(tarea);
+        }
+      }
 
 
     public void vender(){
@@ -83,7 +93,34 @@ public class Vendedor implements Comparable<Vendedor>{
 
  }
 
-   @Override
+    public String getNombre() {
+        return nombre;
+    }
+
+    public Integer getDni() {
+        return dni;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(dni);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      Boolean resultado;
+        if(obj==null || !obj.getClass().equals(this.getClass())){
+
+        resultado=false;
+
+        }else{
+              Vendedor compararVendedor= (Vendedor)obj;
+              resultado=compararVendedor.equals(this.dni);
+        }
+        return resultado;
+    }
+
+    @Override
     public int compareTo(Vendedor o) {
        return this.sueldo.compareTo(o.sueldo);
 
